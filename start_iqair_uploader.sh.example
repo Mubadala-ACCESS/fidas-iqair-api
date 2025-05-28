@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Navigate to the script directory
+cd /path/to/app
+
+# Create a timestamp
+timestamp=$(date +"%Y%m%d_%H%M")
+
+# Define the log directory
+log_directory="/path/to/logs"
+
+# Ensure the log directory exists
+mkdir -p $log_directory
+
+# Run the Python script and redirect output to a log file in the log directory
+python3 upload_to_iqair.py > "$log_directory/iqair_uploader_$timestamp.log" 2>&1
